@@ -6,7 +6,7 @@ and display the information about the movies.
 """
 
 
-import fresh_tomatoes
+import fresh_blueberries
 import media
 
 
@@ -78,4 +78,4 @@ hunger_games = media.Movie("Hunger Games",
 
 movies = [toy_story, avatar, school_of_rock, ratatouille, midnight_in_paris, hunger_games]
 
-fresh_tomatoes.open_movie_cards_page(movies)
+fresh_blueberries.open_movie_cards_page(movies)

@@ -4,7 +4,7 @@ main_page_head = '''
 	<html lang="en">
 	<head>
 	    <meta charset="utf-8">
-	    <title>Fresh Tomatoes!</title>
+	    <title>Fresh Blueberries</title>
 
 	    <!-- Bootstrap 4 -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
@@ -216,7 +216,7 @@ main_page_content = '''
 	<div class="navbar navbar-expand" role="navigation">
 	  <div class="container">
 		<div class="navbar-header">
-		  <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
+		  <a class="navbar-brand" href="#">Fresh Blueberries Movie Trailers</a>
 	    </div>
 	  </div>
 	</div>
