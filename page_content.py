@@ -67,7 +67,7 @@ main_page_scripts = '''
         $("#trailer-video-container").empty();
     });
     // Start playing the video whenever the trailer modal is opened
-    $(document).on('click', '.movie-tile', function (event) {
+    $(document).on('click', '#play-trailer', function (event) {
         var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
         var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
         $("#trailer-video-container").empty().append($("<iframe></iframe>", {
@@ -77,25 +77,25 @@ main_page_scripts = '''
           'frameborder': 0
         }));
     });
-        // Show information about the movie whenever the info modal is opened
-        $(document).on('click', '#info-data', function (event) {
-            var title = $(this).attr('data-title');
-            var storyline = $(this).attr('data-storyline');
-            var released = $(this).attr('data-released');
-            var runtime = $(this).attr('data-runtime');
-            var genre = $(this).attr('data-genre');
-            var director = $(this).attr('data-director');
-            var rated = $(this).attr('data-rated');
-            var rating = $(this).attr('data-rating');
+    // Show information about the movie whenever the info modal is opened
+    $(document).on('click', '#info-data', function (event) {
+        var title = $(this).attr('data-title');
+        var storyline = $(this).attr('data-storyline');
+        var released = $(this).attr('data-released');
+        var runtime = $(this).attr('data-runtime');
+        var genre = $(this).attr('data-genre');
+        var director = $(this).attr('data-director');
+        var rated = $(this).attr('data-rated');
+        var rating = $(this).attr('data-rating');
 
-            $("#info-container #title").empty().html("<i><b>" + title + "</b> (" + released + ")</i>");
-            $("#info-container #storyline").html("<i>&emsp;" + storyline + "</i>");
-            $("#info-container #runtime").html("<b>Runtime: </b>" + runtime);
-            $("#info-container #genre").html("<b>Genre: </b>" + genre);
-            $("#info-container #director").html("<b>Director: </b>" + director);
-            $("#info-container #rated").html("<b>Rated: </b>" + rated);
-            $("#info-container #rating").html("<b>Rating: </b>" + rating);
-        });    
+        $("#info-container #title").empty().html("<i><b>" + title + "</b> (" + released + ")</i>");
+        $("#info-container #storyline").html("<i>&emsp;" + storyline + "</i>");
+        $("#info-container #runtime").html("<b>Runtime: </b>" + runtime);
+        $("#info-container #genre").html("<b>Genre: </b>" + genre);
+        $("#info-container #director").html("<b>Director: </b>" + director);
+        $("#info-container #rated").html("<b>Rated: </b>" + rated);
+        $("#info-container #rating").html("<b>Rating: </b>" + rating);
+    });    
     // Animate in the movies when the page loads
     $(document).ready(function () {
       $('.anime').hide().first().show("fast", function showNext() {
