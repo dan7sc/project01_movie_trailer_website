@@ -19,13 +19,32 @@ main_page_head = '''
 
 main_page_styles = '''
     body {
-        padding-top: 80px;
+        background-color: #202020;
+        color: #aaa;
+    }
+    .navbar {
+        background-color: #557;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .navbar-header a {
+        color: #113;
+        font-weight: bold;
+        font-style: italic;
     }
     #trailer .modal-dialog {
-        margin-top: 200px;
-        width: 640px;
-        height: 480px;
+        margin-top: 100px;
+        margin-right: auto;
+        margin-left: auto;
+        width: auto;
+        height: auto;
     }
+        #info .modal-dialog {
+            top: 50px;
+            border-width: 3px;
+            border-style: inset;
+            box-shadow: 5px 5px 20px #779;
+        }
     .hanging-close {
         position: absolute;
         top: -12px;
@@ -35,14 +54,6 @@ main_page_styles = '''
     #trailer-video {
         width: 100%;
         height: 100%;
-    }
-    .movie-tile {
-        margin-bottom: 20px;
-        padding-top: 20px;
-    }
-    .movie-tile:hover {
-        background-color: #EEE;
-        cursor: pointer;
     }
     .scale-media {
         padding-bottom: 56.25%;
@@ -56,6 +67,66 @@ main_page_styles = '''
         left: 0;
         top: 0;
         background-color: white;
+    }
+    .card {
+        border: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        position: relative;
+        height: 342px;
+        width: 220px;            
+        overflow: hidden;
+        color: #ffffff;
+    }
+    .card-body {
+        position: absolute;
+        height: 150px;
+        width: 220px;
+        bottom: -150px;
+        background: linear-gradient(180deg, transparent 0, rgba(0, 0, 0, .8) 30%, #000);
+    }
+    @media only screen and (max-width: 580px) {
+        .card-body {
+            transform: translateY(-150px);
+        }
+    }   
+    .card:hover .card-body {
+        transform: translateY(-150px);
+    }          
+    .card-title h4 {
+        text-shadow: 2px 2px 4px #999;
+        color: white;
+        padding-top: 20px;
+    }
+    .card-option a {
+        font-weight: bold;
+        font-size: 18px;
+        color: lightblue;
+        cursor: pointer;
+    }
+    .card-option:hover {
+        font-weight: bold;
+        color: yellow;
+        text-decoration: none;
+    }    
+    #info-data {
+        padding-bottom: 40px;
+    }
+    #info-container {
+        padding: 10px;
+        background-color: #aad;
+        font-size: 18px;
+        color: #222;            
+    }
+    #title {
+        text-align: center;
+        font-size: 24px;
+    }
+    #storyline {
+        text-align: justify;
     }
 '''
 
