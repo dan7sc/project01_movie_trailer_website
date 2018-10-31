@@ -3,6 +3,12 @@ import page_content
 
 
 def create_movie_cards_content(movies):
+    """
+    Description: Create content about movies
+    Parameter: a instance of the class Movie
+    Return: string content
+    """
+
     # The HTML content for this section of the page
     content = ''
     for movie in movies:

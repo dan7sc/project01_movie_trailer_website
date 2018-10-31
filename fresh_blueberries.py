@@ -6,6 +6,12 @@ import cards
 
 
 def open_movie_cards_page(movies):
+    """
+    Description: Open a browser to show movies content
+    Parameter: a instance of the class Movie
+    Return: Nothing
+    """
+
     # Create or overwrite the output file
     index_file = open('index.html', 'w')
 
@@ -35,6 +41,11 @@ def open_movie_cards_page(movies):
 
 
 def create_dir_file(dir, file):
+    """
+    Description: Create a directory and a file within this
+    Parameter: a diretory name, a file name
+    Return: Nothing
+    """
     if os.path.exists(dir):
         if os.path.exists(dir + '/' + file):
             os.remove(dir + '/' + file)
