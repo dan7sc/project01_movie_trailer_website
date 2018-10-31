@@ -33,8 +33,9 @@ def open_movies_page(movies):
     rendered_content = page_content.main_page_content.format(
         movie_tiles=create_movie_tiles_content(movies))
 
+    main_page_head = page_content.main_page_head + page_content.main_page_styles + page_content.main_page_scripts
     # Output the file
-    output_file.write(page_content.main_page_head + rendered_content)
+    output_file.write(main_page_head + rendered_content)
     output_file.close()
 
     # open the output file in the browser (in a new tab, if possible)

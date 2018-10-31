@@ -11,6 +11,10 @@ main_page_head = '''
 	    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
 	    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+'''
+
+
+main_page_styles = '''
 	    <style type="text/css" media="screen">
 	        body {
 	            padding-top: 80px;
@@ -52,6 +56,9 @@ main_page_head = '''
 	            background-color: white;
 	        }
     	</style>
+'''
+
+main_page_scripts = '''
 	    <script type="text/javascript" charset="utf-8">
 	        // Pause the video when the modal is closed
 	        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
