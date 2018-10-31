@@ -7,17 +7,36 @@ import cards
 
 def open_movie_cards_page(movies):
     # Create or overwrite the output file
-    output_file = open('fresh_tomatoes.html', 'w')
+    index_file = open('index.html', 'w')
 
     # Replace the movie tiles placeholder generated content
     rendered_content = page_content.main_page_content.format(
         movie_cards=cards.create_movie_cards_content(movies))
 
-    main_page_head = page_content.main_page_head + page_content.main_page_styles + page_content.main_page_scripts
-    # Output the file
-    output_file.write(main_page_head + rendered_content)
-    output_file.close()
+    # Write the content in index.html file and close it
+    index_file.write(page_content.main_page_head + rendered_content)
+    index_file.close()
+
+    # Create directory styles and a css file
+    create_dir_file('styles', 'style.css')
+    style_file = open('./styles/style.css', 'w')
+    style_file.write(page_content.main_page_styles)
+    style_file.close()
+
+    # Create directory scripts and a js file
+    create_dir_file('scripts', 'script.js')
+    script_file = open('./scripts/script.js', 'w')
+    script_file.write(page_content.main_page_scripts)
+    script_file.close()
 
     # open the output file in the browser (in a new tab, if possible)
-    url = os.path.abspath(output_file.name)
+    url = os.path.abspath(index_file.name)
     webbrowser.open('file://' + url, new=2)
+
+
+def create_dir_file(dir, file):
+    if os.path.exists(dir):
+        if os.path.exists(dir + '/' + file):
+            os.remove(dir + '/' + file)
+        os.rmdir(dir)
+    os.makedirs(dir)
