@@ -77,9 +77,28 @@ main_page_scripts = '''
           'frameborder': 0
         }));
     });
+        // Show information about the movie whenever the info modal is opened
+        $(document).on('click', '#info-data', function (event) {
+            var title = $(this).attr('data-title');
+            var storyline = $(this).attr('data-storyline');
+            var released = $(this).attr('data-released');
+            var runtime = $(this).attr('data-runtime');
+            var genre = $(this).attr('data-genre');
+            var director = $(this).attr('data-director');
+            var rated = $(this).attr('data-rated');
+            var rating = $(this).attr('data-rating');
+
+            $("#info-container #title").empty().html("<i><b>" + title + "</b> (" + released + ")</i>");
+            $("#info-container #storyline").html("<i>&emsp;" + storyline + "</i>");
+            $("#info-container #runtime").html("<b>Runtime: </b>" + runtime);
+            $("#info-container #genre").html("<b>Genre: </b>" + genre);
+            $("#info-container #director").html("<b>Director: </b>" + director);
+            $("#info-container #rated").html("<b>Rated: </b>" + rated);
+            $("#info-container #rating").html("<b>Rating: </b>" + rating);
+        });    
     // Animate in the movies when the page loads
     $(document).ready(function () {
-      $('.movie-tile').hide().first().show("fast", function showNext() {
+      $('.anime').hide().first().show("fast", function showNext() {
         $(this).next("div").show("fast", showNext);
       });
     });
@@ -93,7 +112,7 @@ main_page_content = '''
     <div class="modal" id="trailer">
       <div class="modal-dialog">
         <div class="modal-content">
-          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+          <a href="#" class="hanging-close" data-dismiss="modal">
             <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
           </a>
           <div class="scale-media" id="trailer-video-container">
@@ -102,18 +121,39 @@ main_page_content = '''
       </div>
     </div>
 
-    <!-- Main Page Content -->
-    <div class="container">
-      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
+    <!-- Information Video Modal -->
+    <div class="modal" id="info">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div id="info-container">     
+            <p id="title"></p>
+            <p id="storyline"></p>
+            <p id="genre"></p>
+            <p id="director"></p>
+            <p id="runtime"></p>
+            <p id="rated"></p>
+            <p id="rating"></p>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Main Page Content -->
+	<div class="navbar navbar-expand" role="navigation">
+	  <div class="container">
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
+	    </div>
+	  </div>
+	</div>
+
     <div class="container">
-      {movie_cards}
+    	<div class="row">
+	      {movie_cards}
+        </div>
     </div>
   </body>
 </html>
@@ -122,8 +162,20 @@ main_page_content = '''
 
 # A single movie entry html template
 movie_card_content = '''
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
-    <img src="{poster_image_url}" width="220" height="342">
-    <h2>{movie_title}</h2>
+<div class="anime col-sm-6 col-md-4 col-lg-3 text-center">
+    <div class="card">
+      <img class="card-img-top" src="{poster_image_url}" width=220 height=342>
+        <div class="card-body">
+            <div class="card-title">
+                <h4>{movie_title}</h4>
+                <div class="card-option">
+                    <a id="play-trailer" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">Trailer</a>
+                </div>
+                <div class="card-option">
+                    <a id="info-data" data-toggle="modal" data-target="#info" data-title="{movie_title}" data-storyline="{movie_storyline}" data-released="{movie_released}" data-runtime="{movie_runtime}" data-genre="{movie_genre}" data-director="{movie_director}" data-rated="{movie_rated}" data-rating="{movie_rating}">Info</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 '''
