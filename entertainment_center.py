@@ -8,7 +8,10 @@ and display the information about the movies.
 import fresh_blueberries
 import media
 
-
+""" 
+Toy Story movie: movie title, storyline, movie released, runtime,
+genre, director, movie rated, rating, poster image and movie trailer 
+"""
 toy_story = media.Movie(
    "Toy Story",
    "A cowboy doll is profoundly threatened and jealous"
@@ -23,6 +26,10 @@ toy_story = media.Movie(
    "http://upload.wikimedia.org/wikipedia/en/1/13/Toy_Story.jpg",
    "https://www.youtube.com/watch?v=KYz2wyBy3kc")
 
+""" 
+Avatar movie: movie title, storyline, movie released, runtime,
+genre, director, movie rated, rating, poster image and movie trailer 
+"""
 avatar = media.Movie(
    "Avatar",
    "A paraplegic marine dispatched to the moon Pandora"
@@ -37,6 +44,10 @@ avatar = media.Movie(
    "http://upload.wikimedia.org/wikipedia/id/b/b0/Avatar-Teaser-Poster.jpg",
    "https://www.youtube.com/watch?v=5PSNL1qE6VY")
 
+""" 
+School of Rock movie: movie title, storyline, movie released, runtime,
+genre, director, movie rated, rating, poster image and movie trailer 
+"""
 school_of_rock = media.Movie(
    "School of Rock",
    "After being kicked out of a rock band,"
@@ -52,6 +63,10 @@ school_of_rock = media.Movie(
    "http://upload.wikimedia.org/wikipedia/en/1/11/School_of_Rock_Poster.jpg",
    "https://www.youtube.com/watch?v=3PsUJFEBC74")
 
+""" 
+Ratatouille movie: movie title, storyline, movie released, runtime,
+genre, director, movie rated, rating, poster image and movie trailer 
+"""
 ratatouille = media.Movie(
    "Ratatouille",
    "A rat who can cook makes an unusual alliance"
@@ -65,6 +80,10 @@ ratatouille = media.Movie(
    "http://upload.wikimedia.org/wikipedia/en/5/50/RatatouillePoster.jpg",
    "https://www.youtube.com/watch?v=c3sBBRxDAqk")
 
+""" 
+Midnight in Paris movie: movie title, storyline, movie released, runtime,
+genre, director, movie rated, rating, poster image and movie trailer 
+"""
 midnight_in_paris = media.Movie(
    "Midnight in Paris",
    "While on a trip to Paris with his fiancée's family,"
@@ -80,6 +99,10 @@ midnight_in_paris = media.Movie(
    + "Midnight_in_Paris_Poster.jpg",
    "https://www.youtube.com/watch?v=FAfR8omt-CY")
 
+""" 
+Hunger Games movie: movie title, storyline, movie released, runtime,
+genre, director, movie rated, rating, poster image and movie trailer 
+"""
 hunger_games = media.Movie(
    "Hunger Games",
    "Katniss Everdeen voluntarily takes"
@@ -96,9 +119,10 @@ hunger_games = media.Movie(
    "http://upload.wikimedia.org/wikipedia/en/4/42/HungerGamesPoster.jpg",
    "https://www.youtube.com/watch?v=PbA63a7H0bo")
 
-
+# Put all movies in a list
 movies = [toy_story, avatar,
           school_of_rock, ratatouille,
           midnight_in_paris, hunger_games]
 
+# Open index.html file in a web browser via fresh_bluberries.py file
 fresh_blueberries.open_movie_cards_page(movies)
